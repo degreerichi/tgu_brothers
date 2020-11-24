@@ -1,0 +1,51 @@
+.navbar {
+    .navbar-brand {
+        padding-right: $ui-base * 6;
+        @include media-breakpoint-down(sm){
+            padding-right: $ui-base * 2;
+        }
+        img {
+            @include media-breakpoint-down(sm){
+                max-width: 250px;
+            }
+            @include media-breakpoint-down(lg){
+                max-width: 350px;
+            }
+        }
+    }
+    .navbar-nav {
+        .nav-item {
+            .nav-link {
+                padding: $ui-base * 4;
+                font-family: big-noodle;
+                font-size: 1.4rem;
+                color: map-get($colors, black);
+                @include media-breakpoint-down(lg){
+                    font-size: 1.2rem;
+                }
+                &:hover {
+                    color: map-get($colors, green-medium);
+                }
+            }
+        }
+    }
+    .navbar-text {
+        .nav-link {
+            color: map-get($colors, black);
+            padding-left: $ui-base * 2;
+            padding-right: $ui-base * 2;
+            @include media-breakpoint-down(lg){
+                padding-left: $ui-base;
+                padding-right: $ui-base;
+            }
+            &:hover {
+                color: map-get($colors, green-medium);
+            }
+        }
+    }
+    .navbar-toggler {
+        .navbar-toggler-icon {
+            color: map-get($colors, black);
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.footer {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    @include media-breakpoint-down(sm) {
+        padding-top: 15vh;
+        padding-bottom: 15vh;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: map-get($colors, yellow);
+    .footer-logo {
+        width: 150px;
+    }
+    p {
+        font-size: 1.2rem;
+        &.footer-copyright {
+            font-size: 1.4rem;
+        }
+    }
+}

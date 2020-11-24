@@ -1,0 +1,63 @@
+.teachers {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    .teacher {
+        margin-top: $ui-base * 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row; 
+        @include media-breakpoint-down(md){
+            flex-direction: column;
+        }
+        h1, h2, h3, h4, h5, p {
+            letter-spacing: 0;
+            font-family: avenir-medium;
+        }
+        .teacher-image {
+            padding: $ui-base * 4;
+            border-radius: 50%;
+            @include media-breakpoint-down(md){
+                width: 250px;
+                margin: auto;
+            }
+        }
+        &.right {
+            @include media-breakpoint-down(md){
+                flex-direction: column-reverse;
+            }
+            .teacher-info {
+                text-align: right;
+                @include media-breakpoint-down(md){
+                    text-align: center;
+                }
+            }
+        }
+        .teacher-info {
+            padding: $ui-base * 4 $ui-base * 8 $ui-base * 4 $ui-base * 8;
+            @include media-breakpoint-down(md){
+                text-align: center;
+            }
+            .teacher-title {
+                font-family: avenir-medium;
+                text-transform: uppercase;
+                display: block;
+                font-size: 2.5rem;
+                line-height: 3rem;
+            }
+            .teacher-description {
+                font-family: avenir-medium;
+                display: block;
+                font-size: 1.5rem;
+                margin-bottom: $ui-base * 2;
+            }
+            .teacher-content {
+                font-family: avenir-medium;
+                font-size: 1.2rem;
+                @include media-breakpoint-down(md){
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

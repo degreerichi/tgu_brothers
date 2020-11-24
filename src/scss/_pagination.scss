@@ -1,0 +1,26 @@
+.pagination {
+    .page-item {
+        &:not(.arrow) {
+            .page-link  {
+                background-color: map-get($colors, white);
+                color: map-get($colors, black);
+            }
+        }
+        &.arrow {
+            .page-link {
+                color: map-get($colors, white);
+            }
+            &.disabled {
+                opacity: 0.3;
+            }
+        }
+        .page-link {
+            border: none;
+            background-color: transparent;
+            &.active {
+                background-color: map-get($colors, green-dark);
+                color: map-get($colors, white);
+            }
+        }
+    }
+}

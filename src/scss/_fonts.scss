@@ -1,0 +1,21 @@
+// Para colocar una fuente, usar:
+// font-family: <nombre de la key del map de abajo>; ejemplo:
+// font-family: avenir-regular;
+$fonts: (
+    avenir-regular: AvenirNextLTPro-Regular,
+    avenir-medium: Avenir-Medium,
+    big-noodle: BigNoodleTitling,
+    warsaw: WarsawGothic,
+    din: DINRundschriftMittel
+);
+
+@each $font, $name in $fonts {
+    @font-face {
+        font-family: $font;
+        src: 
+            url("../fonts/#{$name}.eot") format("eot"),
+            url("../fonts/#{$name}.ttf") format("ttf"),
+            url("../fonts/#{$name}.woff") format("woff"),
+            url("../fonts/#{$name}.woff2") format("woff2");
+    }
+}

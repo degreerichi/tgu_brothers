@@ -1,0 +1,65 @@
+.courses {
+    background-color: map-get($colors, green);
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    .course {
+        @include default-transition-all;
+        padding: $ui-base * 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.15);
+            border-radius: $ui-base;
+        }
+        .course-image {
+
+        }
+        .course-date {
+            margin-top: $ui-base * 4;
+            margin-bottom: $ui-base * 4;
+            display: inline-block;
+            font-family: warsaw;
+            font-size: 1.9rem;
+            line-height: 2rem;
+            letter-spacing: 0.3rem;
+            color: map-get($colors, black);
+            .course-state {
+                font-family: avenir-medium;
+                font-size: 1.4rem;
+                line-height: 1.4rem;
+                letter-spacing: 0rem;
+                display: block;
+                text-align: right;
+                color: map-get($colors, gray);
+            }
+        }
+        .course-info {
+            font-family: din;
+            font-size: 1.3rem;
+            text-align: center;
+            color: map-get($colors, black);
+        }
+    }
+
+}
+
+.modal-course-date {
+    margin-top: $ui-base * 4;
+    margin-bottom: $ui-base * 4;
+    display: inline-block;
+    font-family: warsaw;
+    font-size: 1.9rem;
+    line-height: 2rem;
+    letter-spacing: 0.3rem;
+    .modal-course-state {
+        font-family: avenir-medium;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        letter-spacing: 0rem;
+        display: block;
+        text-align: right;
+        color: map-get($colors, gray-light);
+    }
+}

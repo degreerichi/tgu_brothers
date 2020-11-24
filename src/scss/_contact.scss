@@ -1,0 +1,75 @@
+.contact {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    @include media-breakpoint-down(sm) {
+        padding-top: 15vh;
+        padding-bottom: 15vh;
+    }
+    background-color: map-get($colors, green);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include media-breakpoint-down(sm) {
+        margin-top: 10vh;
+    }
+    .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        @include media-breakpoint-down(sm) {
+            align-items: center;
+        }
+        label {
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+            &.error {
+                margin-top: $ui-base;
+                margin-bottom: 0;
+                color: map-get($colors, pink-dark);
+                font-size: 1rem;
+            }
+        }
+        input, textarea, select {
+            &::placeholder {
+                color: map-get($colors, green-dark);
+            }
+        }
+        margin-bottom: $ui-base * 3;
+    }
+    input, select, textarea, button, label {
+        width: 400px;
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+        }
+    }
+    input, select, textarea, button {
+        padding: $ui-base $ui-base * 2;
+        border: 3px solid map-get($colors, green-dark);
+        background-color: transparent;
+        color: map-get($colors, green-dark);
+        font-family: avenir-medium;
+    }
+    button {
+        @include default-transition-all;
+        text-transform: uppercase;
+        &:hover {
+            background-color: map-get($colors, green-medium);
+        }
+        &:disabled {
+            opacity: 0.3;
+        }
+    }
+}
+
+.success-message {
+    margin-top: $ui-base * 3;
+    margin-bottom: $ui-base * 3;
+    text-align: center;
+    display: inline-block;
+    color: map-get($colors, white);
+    font-size: 1.8rem;
+}

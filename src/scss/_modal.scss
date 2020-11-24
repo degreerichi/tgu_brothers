@@ -1,0 +1,27 @@
+.modal-content {
+    color: white;
+    background-color: map-get($colors, black);
+    .modal-header {
+        border: none !important;
+        .modal-title {
+            text-align: center;
+            flex: 1;
+        }
+    }
+    .modal-body {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
+        p {
+            font-family: avenir-regular;
+        }
+    }
+    .close {
+        text-shadow: none;
+        color: white;
+    }
+    .modal-footer {
+        border: none;
+    }
+}
