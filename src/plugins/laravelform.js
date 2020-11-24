@@ -205,7 +205,7 @@ export class LaravelForm extends React.Component {
             // Agregado, se reinician las variables del estado
             let newFormProps = {}
 
-            for (const [key, value] of Object.entries(this.state.formProps)) {
+            for (const [key] of Object.entries(this.state.formProps)) {
                 newFormProps[key] = "";
             }
 
