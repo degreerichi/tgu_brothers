@@ -21,6 +21,11 @@
                 @include media-breakpoint-down(lg){
                     font-size: 1.2rem;
                 }
+                @include media-breakpoint-down(sm){
+                    font-size: 1.6rem;
+                    text-align: center;
+                    padding: $ui-base * 4 $ui-base * 2 $ui-base $ui-base * 2;
+                }
                 &:hover {
                     color: map-get($colors, green-medium);
                 }
