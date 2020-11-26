@@ -7,7 +7,7 @@
         img {
             max-width: 350px;
             @include media-breakpoint-down(sm){
-                max-width: 250px;
+                max-width: 200px;
             }
         }
     }

@@ -55,7 +55,7 @@ export const Contact = ()=>{
                 <div className="row mx-0">
                     <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
                         <div className="d-flex justify-content-center align-items-center">
-                            <img className="img-fluid" style={{maxWidth: "380px"}} src={imgSosloquehaces} alt=""/>
+                            <img className="img-fluid" src={imgSosloquehaces} alt=""/>
                         </div>
                     </div>
                     <div className="col-12 col-md-6">

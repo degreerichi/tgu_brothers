@@ -14,7 +14,7 @@ const Course = ({title, date, state = " ", image, content})=>{
     return (
         <>
             <div className="course" onClick={toggleModal}>
-                <img className="course-image" src={image} alt=""/>
+                <img className="course-image img-fluid" src={image} alt=""/>
                 <span className="course-date">{date} <span className="course-state">{state}</span></span>
                 <p className="course-info">
                     {content}
@@ -23,7 +23,7 @@ const Course = ({title, date, state = " ", image, content})=>{
             <Modal isOpen={modalVisible} toggle={toggleModal} centered={true}>
                 <ModalHeader toggle={toggleModal}>{title}</ModalHeader>
                 <ModalBody>
-                    <img src={image} alt=""/>
+                    <img className="img-fluid" src={image} alt=""/>
                     <p className="mb-0"><span className="modal-course-date">{date} <span className="modal-course-state">{state}</span></span></p>
                     <p className="text-center">{content}</p>
                 </ModalBody>
