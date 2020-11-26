@@ -40,3 +40,10 @@ nav {
 .sticky {
     opacity: 1;
 }
+
+.container {
+    @include media-breakpoint-down(md){
+        padding-left: 8vw;
+        padding-right: 8vw;
+    }
+}

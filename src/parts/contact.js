@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import imgSosloquehaces from "../img/sosloquehaces.png";
 import { LaravelForm } from "../plugins/laravelform";
 import { GetCursosResume } from "../api/api";
+import { SAVE_REGISTRO } from "../api/routes";
 
 export const Contact = ()=>{
 
@@ -58,60 +59,58 @@ export const Contact = ()=>{
                         </div>
                     </div>
                     <div className="col-12 col-md-6">
-                        <div className="container">
-                            <LaravelForm 
-                                url="http://tgu.brothers.com/api/registrar"
-                                method="post"
-                                success={onFormSuccess}
-                                onChange={updateState}>
-                                <div className="row form">
-                                    <div className="col-12">
-                                        <div className="input-wrapper">
-                                            {/* <label htmlFor="nombre">Nombre</label> */}
-                                            <input value={nombre} type="text" name="nombre" id="nombre" placeholder="Nombre"/>
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="input-wrapper">
-                                            {/* <label htmlFor="correo">Correo</label> */}
-                                            <input value={correo} type="text" name="correo" id="correo" placeholder="Correo"/>
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="input-wrapper">
-                                            {/* <label htmlFor="telefono">Teléfono</label> */}
-                                            <input value={telefono} type="text" name="telefono" id="telefono" placeholder="Teléfono"/>
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="input-wrapper">
-                                            <label htmlFor="curso_interes">Me interesa</label>
-                                            <select value={cursoInteres} name="curso_interes" id="curso_interes" defaultValue="">
-                                                <option value="" disabled>Seleccione un curso</option>
-                                                {cursos.map((c)=>{
-                                                    return <option value={c.id}>{c.nombre}</option>
-                                                })}
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="input-wrapper">
-                                            {/* <label htmlFor="mensaje">Mensaje</label> */}
-                                            <input value={mensaje} type="text" name="mensaje" id="mensaje" placeholder="Mensaje"/>
-                                        </div>
-                                    </div>
-                                    <div className="col-12 mt-2">
-                                        <button type="submit">Enviar</button>
-                                    </div>
-                                    <div className="col-12">
-                                        {successMessage !== "" ? (
-                                            <span className="success-message">{successMessage}</span>
-                                        ) : ""}
+                        <LaravelForm 
+                            url={SAVE_REGISTRO}
+                            method="post"
+                            success={onFormSuccess}
+                            onChange={updateState}>
+                            <div className="row form">
+                                <div className="col-12">
+                                    <div className="input-wrapper">
+                                        {/* <label htmlFor="nombre">Nombre</label> */}
+                                        <input value={nombre} type="text" name="nombre" id="nombre" placeholder="Nombre"/>
                                     </div>
                                 </div>
-                                {/* <button type="submit" class="btn btn-primary">Submit</button> */}
-                            </LaravelForm>
-                        </div>
+                                <div className="col-12">
+                                    <div className="input-wrapper">
+                                        {/* <label htmlFor="correo">Correo</label> */}
+                                        <input value={correo} type="text" name="correo" id="correo" placeholder="Correo"/>
+                                    </div>
+                                </div>
+                                <div className="col-12">
+                                    <div className="input-wrapper">
+                                        {/* <label htmlFor="telefono">Teléfono</label> */}
+                                        <input value={telefono} type="text" name="telefono" id="telefono" placeholder="Teléfono"/>
+                                    </div>
+                                </div>
+                                <div className="col-12">
+                                    <div className="input-wrapper">
+                                        <label htmlFor="curso_interes">Me interesa</label>
+                                        <select value={cursoInteres} name="curso_interes" id="curso_interes" defaultValue="">
+                                            <option value="" disabled>Seleccione un curso</option>
+                                            {cursos.map((c)=>{
+                                                return <option value={c.id}>{c.nombre}</option>
+                                            })}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="col-12">
+                                    <div className="input-wrapper">
+                                        {/* <label htmlFor="mensaje">Mensaje</label> */}
+                                        <input value={mensaje} type="text" name="mensaje" id="mensaje" placeholder="Mensaje"/>
+                                    </div>
+                                </div>
+                                <div className="col-12 mt-2">
+                                    <button type="submit">Enviar</button>
+                                </div>
+                                <div className="col-12">
+                                    {successMessage !== "" ? (
+                                        <span className="success-message">{successMessage}</span>
+                                    ) : ""}
+                                </div>
+                            </div>
+                            {/* <button type="submit" class="btn btn-primary">Submit</button> */}
+                        </LaravelForm>
                     </div>
                 </div>
             </div>

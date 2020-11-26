@@ -36,6 +36,8 @@
         .teacher-info {
             padding: $ui-base * 4 $ui-base * 8 $ui-base * 4 $ui-base * 8;
             @include media-breakpoint-down(md){
+                padding-left: 0;
+                padding-right: 0;
                 text-align: center;
             }
             .teacher-title {
