@@ -23,6 +23,10 @@ export const Webnav = ()=>{
         setCollapsed(!collapsed);
     }
 
+    const toggleNavbarIfMobile = ()=>{
+        if(window.innerWidth < 768) toggleNavbar();
+    }
+
     return(
         <>
             <Navbar expand="md" sticky="top" className="bg-white">
@@ -35,22 +39,19 @@ export const Webnav = ()=>{
                 <Collapse isOpen={!collapsed} navbar>
                     <Nav navbar>
                         <NavItem>
-                            <NavLink href="#escuela">Escuela</NavLink>
+                            <NavLink href="#escuela" onClick={toggleNavbarIfMobile}>Escuela</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="#cursos">Cursos</NavLink>
-                        </NavItem>
-                        {/* <NavItem>
-                            <NavLink href="#home">At Home</NavLink>
-                        </NavItem> */}
-                        <NavItem>
-                            <NavLink href="#equipo">Equipo</NavLink>
+                            <NavLink href="#cursos" onClick={toggleNavbarIfMobile}>Cursos</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="#sosloquehaces">#SosLoQueHaces</NavLink>
+                            <NavLink href="#equipo" onClick={toggleNavbarIfMobile}>Equipo</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="#contacto">Contacto</NavLink>
+                            <NavLink href="#sosloquehaces" onClick={toggleNavbarIfMobile}>#SosLoQueHaces</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="#contacto" onClick={toggleNavbarIfMobile}>Contacto</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
