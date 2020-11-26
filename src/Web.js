@@ -9,6 +9,7 @@ import { Teachers } from "./parts/teachers";
 import { Media } from "./parts/media";
 import { Contact } from "./parts/contact";
 import { Footer } from "./parts/footer";
+import { Preloader } from "./parts/preloader";
 import SmoothScroll from "smooth-scroll";
 
 function Web() {
@@ -24,6 +25,7 @@ function Web() {
 
 	return (
 		<>
+			<Preloader/>
 			<Webnav/>
 			<Splash/>
 			<About/>
