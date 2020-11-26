@@ -1,4 +1,7 @@
 .navbar {
+    .navbar-toggler {
+        margin-right: 0px;
+    }
     .navbar-brand {
         padding-right: $ui-base * 6;
         @include media-breakpoint-down(sm){

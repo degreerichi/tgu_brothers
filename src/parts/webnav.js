@@ -33,7 +33,7 @@ export const Webnav = ()=>{
                 <NavbarBrand href="#inicio" className="mr-auto">
                     <img src={brotherTguLogo} alt=""/>
                 </NavbarBrand>
-                <NavbarToggler onClick={toggleNavbar} className="mr-2" >
+                <NavbarToggler onClick={toggleNavbar}>
                     <FontAwesomeIcon icon={faBars}/>
                 </NavbarToggler>
                 <Collapse isOpen={!collapsed} navbar>
