@@ -14,11 +14,12 @@ import SmoothScroll from "smooth-scroll";
 function Web() {
 
 	useEffect(()=>{
-		new SmoothScroll('a[href*="#"]', {
+		const options = {
 			speed: 500,
 			speedAsDuration: true,
-			offset: 100
-		});
+			offset: window.innerWidth < 768 ? 400 : 90
+		}
+		new SmoothScroll('a[href*="#"]', options);
 	}, []);
 
 	return (
