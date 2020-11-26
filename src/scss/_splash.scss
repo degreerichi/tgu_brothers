@@ -7,10 +7,13 @@
     background-image: url(../img/splash.jpg);
     background-position: center;
     background-size: cover;
+    @include media-breakpoint-down(sm){
+        background-position: right;
+    }
     .splash-image-wrapper {
         transform: translateX(-200px);
         @include media-breakpoint-down(md){
-            transform: translateX(-50px);
+            transform: translateX(0px);
         }
         img {
             width: 400px;
