@@ -85,6 +85,7 @@ export const Courses = ()=>{
             animateOut, 
             coursesWrapper.current
         );
+        // eslint-disable-next-line
     }, []);
 
     return(

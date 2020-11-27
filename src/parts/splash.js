@@ -28,7 +28,7 @@ export const Splash = ()=>{
             animateOut, 
             splashWrapper.current
         );
-        
+        // eslint-disable-next-line
     }, []);
 
     return(
