@@ -88,8 +88,8 @@ export const Contact = ()=>{
                                         <label htmlFor="curso_interes">Me interesa</label>
                                         <select value={cursoInteres} name="curso_interes" id="curso_interes" defaultValue="">
                                             <option value="" disabled>Seleccione un curso</option>
-                                            {cursos.map((c)=>{
-                                                return <option value={c.id}>{c.nombre}</option>
+                                            {cursos.map((c, i)=>{
+                                                return <option key={i} value={c.id}>{c.nombre}</option>
                                             })}
                                         </select>
                                     </div>

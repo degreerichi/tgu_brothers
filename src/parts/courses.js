@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { GetCursos } from "../api/api";
 import { Paginator } from "../plugins/Paginator";
+import { 
+    addScene, 
+    tm
+} from "../helpers/anim";
 
 const Course = ({title, date, state = " ", image, content})=>{
 
@@ -37,9 +41,26 @@ const Course = ({title, date, state = " ", image, content})=>{
 
 export const Courses = ()=>{
 
+    let coursesWrapper = useRef();
+    let coursesList = useRef();
+    let duration = 0.8;
+
     let [courses, setCourses] = useState([]);
     let [currentPage, setCurrentPage] = useState(1);
     let [totalPages, setTotalPages] = useState(0);
+
+    let animateIn = ()=>{
+        tm.to(coursesList.current, {
+            css: {
+                transform: "translateX(0%)",
+                opacity: 1
+            }, duration: duration
+        });
+    }
+
+    let animateOut = ()=>{
+        // fadeOutDown(coursesList.current, duration);
+    }
     
     let getCoursesByPage = (page) => {
         setCourses([]);
@@ -51,17 +72,29 @@ export const Courses = ()=>{
     }
 
     useEffect(()=>{
+        tm.set(coursesList.current, {
+            css: {
+                transform: "translateY(20%)",
+                opacity: 0
+            }
+        });
+
         getCoursesByPage(1);
+        addScene(
+            animateIn, 
+            animateOut, 
+            coursesWrapper.current
+        );
     }, []);
 
     return(
-        <div className="courses" id="cursos">
-            <div className="container">
+        <div className="courses" id="cursos" ref={coursesWrapper}>
+            <div className="container" ref={coursesList}>
                 <h1 className="text-center text-white mb-5">Cursos</h1>
                 <div className="row">
-                    {courses.map((c)=>{
+                    {courses.map((c, i)=>{
                         return (
-                            <div className="col-12 col-md-4">
+                            <div className="col-12 col-md-4" key={`course${i}`}>
                                 <Course
                                     title={c.nombre}
                                     date={c.fecha}

@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import { 
+    addScene, 
+    fadeInUp, 
+    fadeOutDown 
+} from "../helpers/anim";
 
 export const About = ()=>{
+
+    let aboutText = useRef();
+    let duration = 0.8;
+
+    let animateIn = ()=>{
+        fadeInUp(aboutText.current, duration);
+    }
+
+    let animateOut = ()=>{
+        fadeOutDown(aboutText.current, duration);
+    }
+
+    useEffect(()=>{
+
+        addScene(
+            animateIn,
+            animateOut,
+            aboutText.current
+        );
+        
+    }, []);
+
     return(
         <div className="about" id="escuela">
-            <div className="container px-5 text-center">
+            <div className="container px-5 text-center" ref={aboutText}>
                 <p>
                     Para Brother la mejor forma de aprender es haciendo, enfrentando problemas reales en entornos reales y de manera compartida. Enfrentarte al miedo, presentar un trabajo a un cliente real y verte dentro de una situación que te supere, que te ponga incómodo, que te haga dudar de vos mismo. Allí es cuando empezás a dar lo mejor de vos y a descubrir tu mejor “yo”. Brother es un viaje a través de una experiencia vital.
                 </p>
