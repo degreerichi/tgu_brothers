@@ -25,7 +25,7 @@ export const About = ()=>{
             animateOut,
             aboutText.current
         );
-        
+        // eslint-disable-next-line
     }, []);
 
     return(
