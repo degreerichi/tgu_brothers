@@ -6,7 +6,7 @@ export const Splash = ()=>{
     return(
         <>
             <div className="splash" id="inicio">
-                <video autoPlay muted loop className="splash-video-background">
+                <video autoPlay muted loop preload className="splash-video-background">
                     <source src={video} type="video/mp4"/>
                 </video>
                 <div className="splash-image-wrapper">
