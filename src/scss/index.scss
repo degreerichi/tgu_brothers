@@ -17,7 +17,7 @@ html, body {
     font-size: 16px;
 }
 html, body, p {
-    font-family: avenir-regular;
+    font-family: avenir-regular, Arial, Helvetica, sans-serif;
 }
 
 @each $h, $size in $hs {
