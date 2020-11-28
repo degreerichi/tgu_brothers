@@ -36,8 +36,8 @@ export const Splash = ()=>{
         <>
             <div className="splash" id="inicio" ref={splashWrapper}>
                 <video autoPlay muted loop preload="true" className="splash-video-background">
-                    <source src={videoOgv} type="video/ogg"/>
                     <source src={videoMp4} type="video/mp4"/>
+                    <source src={videoOgv} type="video/ogg"/>
                 </video>
                 <div className="splash-image-wrapper">
                     <img src={hashtag} alt="" ref={hashtagElement}/>
