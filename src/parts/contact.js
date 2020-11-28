@@ -4,7 +4,7 @@ import { LaravelForm } from "../plugins/laravelform";
 import { GetCursosResume } from "../api/api";
 import { SAVE_REGISTRO } from "../api/routes";
 
-export const Contact = ()=>{
+const Contact = ()=>{
 
     let [successMessage, setSuccessMessage] = useState("");
     let [nombre, setNombre] = useState();
@@ -117,3 +117,5 @@ export const Contact = ()=>{
         </div>
     );
 }
+
+export default Contact;

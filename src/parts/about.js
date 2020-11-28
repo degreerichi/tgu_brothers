@@ -5,7 +5,7 @@ import {
     fadeOutDown 
 } from "../helpers/anim";
 
-export const About = ()=>{
+const About = ()=>{
 
     let aboutText = useRef();
     let duration = 0.8;
@@ -41,3 +41,5 @@ export const About = ()=>{
         </div>
     );
 }
+
+export default About;

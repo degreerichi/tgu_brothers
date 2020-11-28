@@ -25,7 +25,7 @@ const Teacher = ({image, name, description, content, right = false})=>{
     );
 }
 
-export const Teachers = ()=>{
+const Teachers = ()=>{
     return(
         <div className="teachers" id="equipo">
             <div className="container">
@@ -177,3 +177,5 @@ export const Teachers = ()=>{
         </div>
     );
 }
+
+export default Teachers;

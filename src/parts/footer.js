@@ -1,7 +1,7 @@
 import React from "react";
 import jabali from "../img/jabali.svg";
 
-export const Footer = ()=>{
+const Footer = ()=>{
     return(
         <div className="footer">
             <img className="footer-logo mb-4" src={jabali} alt=""/>
@@ -12,3 +12,5 @@ export const Footer = ()=>{
         </div>
     );
 }
+
+export default Footer;

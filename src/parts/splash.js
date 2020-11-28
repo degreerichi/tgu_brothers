@@ -8,7 +8,7 @@ import {
     fadeOutLeft 
 } from "../helpers/anim";
 
-export const Splash = ()=>{
+const Splash = ()=>{
 
     let hashtagElement = useRef();
     let splashWrapper = useRef();
@@ -46,3 +46,5 @@ export const Splash = ()=>{
         </>
     );
 }
+
+export default Splash;

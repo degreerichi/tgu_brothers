@@ -39,7 +39,7 @@ const Course = ({title, date, state = " ", image, content})=>{
     );
 }
 
-export const Courses = ()=>{
+const Courses = ()=>{
 
     let coursesWrapper = useRef();
     let coursesList = useRef();
@@ -118,3 +118,5 @@ export const Courses = ()=>{
         </div>
     );
 }
+
+export default Courses;
